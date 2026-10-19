@@ -2,7 +2,7 @@
 
 A clean, dark-themed stopwatch with lap tracking, built with vanilla HTML, CSS and JavaScript.
 
-![Preview](preview.png)
+![Preview](Preview.png)
 
 
 ## Features
