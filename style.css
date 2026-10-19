@@ -1,0 +1,286 @@
+/* Add font inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Theme colors */
+:root {
+    --bg: #0f1117;
+    --text: #e8ecf4;
+    --card: #1a1d27;
+    --card-border: #2a2f3d;
+    --muted: #7c8499;
+    --shadow: rgba(0, 0, 0, 0.45);
+    --shadow-hover: rgba(0, 0, 0, 0.6);
+}
+
+/* Rest */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 560px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo i {
+    font-size: 70px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover i {
+    transform: rotate(15deg);
+}
+
+.logo h2 {
+    font-size: 40px;
+    margin-top: 5px;
+}
+
+/* Time card */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px 40px;
+    margin: 20px 0;
+    background-color: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    width: 90%;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px var(--shadow-hover);
+}
+
+/* clamp(min, ideal, max): font scales with screen */
+.time-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.time-box p {
+    font-weight: 700;
+    font-size: clamp(26px, 7vw, 40px);
+    color: var(--text);
+}
+
+.time-box span {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.separator {
+    font-size: clamp(26px, 7vw, 40px);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 10px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 18px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 18px var(--shadow);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px var(--shadow);
+}
+
+.start-btn {
+    background-color: #2cad6f;
+    color: #fff;
+}
+
+.pause-btn {
+    background-color: #308bfa;
+    color: #fff;
+}
+
+.lap-btn {
+    background-color: #f5a524;
+    color: #fff;
+}
+
+.reset-btn {
+    background-color: #f34d4f;
+    color: #fff;
+}
+
+.btn i {
+    font-size: 24px;
+    transition: transform 0.2s ease;
+}
+
+.reset-btn:hover i {
+    transform: rotate(-45deg) scale(1.1);
+}
+
+
+/* Lap box */
+.save {
+    width: 100%;
+    height: 240px;
+    background-color: var(--card);
+    border: 3px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--muted);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Same 3-column grid for header and rows so they line up */
+.save .title,
+#laps li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 36px;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.save .title span:first-child,
+#laps li span:first-child {
+    text-align: left;
+}
+
+/* "No laps yet" text */
+.save>span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#laps {
+    list-style: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+     scrollbar-width: none; /* Hide scrollbar, keep scrolling */
+    -ms-overflow-style: none;
+}
+
+#laps::-webkit-scrollbar {
+    display: none;
+}
+
+#laps li {
+    color: var(--text);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #f34d4f;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+
+/*========== Responsive ==========*/
+@media (max-width: 560px) {
+    .container {
+        padding: 16px;
+    }
+
+    .logo i {
+        font-size: 56px;
+    }
+
+    .logo h2 {
+        font-size: 30px;
+    }
+
+    .content {
+        width: 100%;
+        padding: 16px 12px;
+        gap: 4px;
+        border-radius: 30px;
+    }
+
+    .separator {
+        margin-bottom: 16px;
+    }
+
+    .buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .save {
+        height: 220px;
+    }
+}

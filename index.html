@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>StopWatch</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <i class="ri-timer-line"></i>
+            <h2>Stopwatch</h2>
+        </div>
+        <!-- Time display -->
+        <div class="content">
+            <div class="time-box">
+                <p id="hours">00</p>
+                <span>HH</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-box">
+                <p id="minutes">00</p>
+                <span>MM</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-box">
+                <p id="seconds">00</p>
+                <span>SS</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-box">
+                <p id="milliseconds">00</p>
+                <span>MS</span>
+            </div>
+        </div>
+        <!-- Controls -->
+        <div class="buttons">
+            <button id="start" class="btn start-btn"><i class="ri-play-large-fill"></i>Start</button>
+            <button id="pause" class="btn pause-btn"><i class="ri-pause-large-fill"></i>Pause</button>
+            <button id="lap" class="btn lap-btn"><i class="ri-flag-line"></i>Lap</button>
+            <button id="reset" class="btn reset-btn"><i class="ri-reset-right-fill"></i>Reset</button>
+        </div>
+        <!-- Lap list -->
+        <div class="save">
+            <div class="title">
+                <span>Lap</span>
+                <span>Time</span>
+                <span></span>
+            </div>
+            <span id="empty">No laps yet</span>
+            <ul id="laps"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
